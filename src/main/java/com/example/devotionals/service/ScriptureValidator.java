@@ -1,4 +1,7 @@
 package com.example.devotionals.service;
 
-public class ScriptureValidator {
+import java.util.List;
+
+public interface ScriptureValidator {
+    List<String> validateOrFilter(List<String> refs);
 }
