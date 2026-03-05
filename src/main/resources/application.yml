@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/devotionals
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+
+# For scheduled jobs
+app:
+  jobs:
+    dailyLessonCron: "0 0/15 * * * *"     # every 15 minutes (generates for users whose local time matches window)
+    reminderDispatchCron: "0 * * * * *"  # every minute
+  reminders:
+    jitterMinutes: 10
+
+# Email stub settings (you can configure real SMTP later)
+spring:
+  mail:
+    host: localhost
+    port: 1025
