@@ -1,4 +1,7 @@
 package com.example.devotionals.service;
 
-public class NotificationService {
+import com.example.devotionals.entity.Reminder;
+
+public interface NotificationService {
+    void send(Reminder reminder);
 }
