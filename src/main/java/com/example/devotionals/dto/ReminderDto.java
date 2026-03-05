@@ -1,4 +1,14 @@
 package com.example.devotionals.dto;
 
-public class ReminderDto {
-}
+import java.time.OffsetDateTime;
+import java.util.UUID;
+
+public record ReminderDto(
+        UUID id,
+        OffsetDateTime scheduledAt,
+        String channel,
+        String title,
+        String message,
+        String supportingReference,
+        String status
+) {}

@@ -1,4 +1,8 @@
 package com.example.devotionals.dto;
 
-public class DeviceTokenDto {
-}
+import jakarta.validation.constraints.NotBlank;
+
+public record DeviceTokenDto(
+        @NotBlank String platform,
+        @NotBlank String token
+) {}
